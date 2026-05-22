@@ -1,8 +1,8 @@
 <template>
   <PageFrame
-    title="Committees"
-    breadcrumb="Committees"
-    description="International advisory board, chairs, editors, and organizing committees."
+    :title="t('committeesPage.title')"
+    :breadcrumb="t('committeesPage.breadcrumb')"
+    :description="t('committeesPage.description')"
   >
     <section class="committee-grid">
       <article v-for="group in committeeGroups" :key="group.title" class="committee-card">
@@ -16,6 +16,10 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import PageFrame from '../components/PageFrame.vue'
-import { committeeGroups } from '../data/site'
+import { useI18n } from '../i18n'
+
+const { t, tm } = useI18n()
+const committeeGroups = computed(() => tm('committeeGroups'))
 </script>

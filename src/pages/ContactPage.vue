@@ -1,35 +1,39 @@
 <template>
   <PageFrame
-    title="Contact"
-    breadcrumb="Contact"
-    description="Secretariat contact information for ICCWAMTIP 2026."
+    :title="t('contact.title')"
+    :breadcrumb="t('contact.breadcrumb')"
+    :description="t('contact.description')"
   >
     <section class="section-block">
-      <h2>2026 23rd ICCWAMTIP Secretariat</h2>
-      <p>For more information about ICCWAMTIP, feel free to contact.</p>
+      <h2>{{ t('contact.secretariat') }}</h2>
+      <p>{{ t('contact.intro') }}</p>
       <div class="contact-grid">
         <a class="contact-card" :href="`tel:${conference.phone.replaceAll(' ', '')}`">
           <Phone />
-          <span>Tel.</span>
+          <span>{{ t('contact.tel') }}</span>
           <strong>{{ conference.phone }}</strong>
         </a>
         <a class="contact-card" :href="`mailto:${conference.email}`">
           <Message />
-          <span>E-mail</span>
+          <span>{{ t('contact.email') }}</span>
           <strong>{{ conference.email }}</strong>
         </a>
       </div>
     </section>
     <section class="section-block">
-      <h2>QQ Group Chat</h2>
-      <p>We will answer your question about the submission of the paper or other related questions here.</p>
-      <img class="qr-image" src="/images/QQGroup.jpg" alt="ICCWAMTIP QQ group QR code" />
+      <h2>{{ t('contact.qqTitle') }}</h2>
+      <p>{{ t('contact.qqText') }}</p>
+      <img class="qr-image" src="/images/QQGroup.jpg" :alt="t('contact.qqAlt')" />
     </section>
   </PageFrame>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { Message, Phone } from '@element-plus/icons-vue'
 import PageFrame from '../components/PageFrame.vue'
-import { conference } from '../data/site'
+import { useI18n } from '../i18n'
+
+const { t, tm } = useI18n()
+const conference = computed(() => tm('conference'))
 </script>

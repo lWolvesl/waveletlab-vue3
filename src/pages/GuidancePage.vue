@@ -1,83 +1,78 @@
 <template>
   <PageFrame
-    title="Author Guidance"
-    breadcrumb="Author Guidance"
-    description="Submission format, CMT submission steps, fees, and acknowledgement."
+    :title="t('guidance.title')"
+    :breadcrumb="t('guidance.breadcrumb')"
+    :description="t('guidance.description')"
   >
     <section class="section-block faq-list">
       <article>
-        <h2>How to know the paper format of the conference?</h2>
+        <h2>{{ t('guidance.q1') }}</h2>
         <p>
-          Please pay an attention to the left side of this website, you can find
+          {{ t('guidance.q1TextBefore') }}
           <a href="/doc/PaperFormat-EN.dotx">PAPER FORMAT (EN)</a> or
-          <a href="/doc/PaperFormat-CN.dotx">PAPER FORMAT (CN)</a> (please download format file to see specifications).
+          <a href="/doc/PaperFormat-CN.dotx">PAPER FORMAT (CN)</a>
+          ({{ t('guidance.q1TextAfter') }})
         </p>
       </article>
       <article>
-        <h2>Where can I find the detailed information for this conference?</h2>
+        <h2>{{ t('guidance.q2') }}</h2>
         <p>
-          Call for paper (CN): <a href="/doc/CallforPaper-CN.pdf">CallForPaper-CN</a>. Call for paper (EN):
+          {{ t('guidance.q2Text') }}
+          <a href="/doc/CallforPaper-CN.pdf">CallForPaper-CN</a> /
           <a href="/doc/CallforPaper-EN.pdf">CallForPaper-EN</a>.
         </p>
       </article>
       <article>
-        <h2>How to submit my paper?</h2>
-        <p>We use CMT system to manager our conference this time.</p>
+        <h2>{{ t('guidance.q3') }}</h2>
+        <p>{{ t('guidance.q3Intro') }}</p>
         <ol>
-          <li>Register an account in <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noreferrer">CMT system</a>.</li>
           <li>
-            Log in your account, then go to the
+            <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noreferrer">{{ t('guidance.steps.0') }}</a>
+          </li>
+          <li>
             <a href="https://cmt3.research.microsoft.com/ICCWAMTIP2025/Submission/Index" target="_blank" rel="noreferrer">
-              submission page
+              {{ t('guidance.steps.1') }}
             </a>.
           </li>
-          <li>Submit your paper.</li>
+          <li>{{ t('guidance.steps.2') }}</li>
         </ol>
       </article>
       <article>
-        <h2>How to know whether my paper is accepted by our conference?</h2>
-        <p>Once your paper is accepted, we will send an email to you. And you can check your paper status all the time in the system.</p>
+        <h2>{{ t('guidance.q4') }}</h2>
+        <p>{{ t('guidance.q4Text') }}</p>
       </article>
     </section>
 
     <section class="section-block">
-      <h2>About the paper fee</h2>
+      <h2>{{ t('guidance.feeTitle') }}</h2>
       <DataTable :columns="feeColumns" :rows="fees" />
-      <p>Example: 6 pages will be charged for 3600￥(2800+400×2).</p>
+      <p>{{ t('guidance.feeExample') }}</p>
     </section>
 
     <section class="section-block">
-      <h2>More questions?</h2>
+      <h2>{{ t('guidance.moreQuestions') }}</h2>
       <p>
-        If you have any question about our conference, please send email to us or join our WeChat group in
-        <RouterLink to="/contact.html">contact page</RouterLink>.
+        {{ t('guidance.moreQuestionsTextBefore') }}
+        <RouterLink to="/contact.html">{{ t('guidance.contactPage') }}</RouterLink>.
       </p>
-      <p>Our email: <a :href="`mailto:${conference.email}`">{{ conference.email }}</a></p>
+      <p>{{ t('guidance.ourEmail') }} <a :href="`mailto:${conference.email}`">{{ conference.email }}</a></p>
     </section>
 
     <section class="section-block">
-      <h2>Acknowledgment</h2>
-      <p>
-        The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was
-        provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as
-        for software development and support.
-      </p>
+      <h2>{{ t('guidance.acknowledgment') }}</h2>
+      <p>{{ t('guidance.acknowledgmentText') }}</p>
     </section>
   </PageFrame>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import DataTable from '../components/DataTable.vue'
 import PageFrame from '../components/PageFrame.vue'
-import { conference } from '../data/site'
+import { useI18n } from '../i18n'
 
-const feeColumns = [
-  { key: 'pages', label: 'Number of pages' },
-  { key: 'fee', label: 'Fee' },
-]
-
-const fees = [
-  { pages: 'Less than 4 pages (include 4 pages)', fee: '2800￥' },
-  { pages: 'More than 4 pages, for each additional page', fee: '400￥' },
-]
+const { t, tm } = useI18n()
+const conference = computed(() => tm('conference'))
+const feeColumns = computed(() => tm('columns.fees'))
+const fees = computed(() => tm('guidance.fees'))
 </script>

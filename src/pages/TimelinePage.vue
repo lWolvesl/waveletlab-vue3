@@ -1,23 +1,23 @@
 <template>
   <PageFrame
-    title="Conference Timeline"
-    breadcrumb="Conference Timeline"
-    description="Important milestones for submission, review, author notification, camera-ready submission, and conference day."
+    :title="t('timelinePage.title')"
+    :breadcrumb="t('timelinePage.breadcrumb')"
+    :description="t('timelinePage.description')"
   >
     <section class="section-block">
-      <h2>Conference Timeline</h2>
+      <h2>{{ t('timelinePage.heading') }}</h2>
       <DataTable :columns="timelineColumns" :rows="timelineRows" />
     </section>
   </PageFrame>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import DataTable from '../components/DataTable.vue'
 import PageFrame from '../components/PageFrame.vue'
-import { timelineRows } from '../data/site'
+import { useI18n } from '../i18n'
 
-const timelineColumns = [
-  { key: 'event', label: 'Event' },
-  { key: 'schedule', label: 'Schedule (China Standard Time, UTC+08:00)' },
-]
+const { t, tm } = useI18n()
+const timelineRows = computed(() => tm('timelineRows'))
+const timelineColumns = computed(() => tm('columns.timeline'))
 </script>

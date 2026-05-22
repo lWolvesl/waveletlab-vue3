@@ -1,7 +1,7 @@
 <template>
-  <PageFrame title="News" breadcrumb="News" description="Latest updates from ICCWAMTIP.">
+  <PageFrame :title="t('newsPage.title')" :breadcrumb="t('newsPage.breadcrumb')" :description="t('newsPage.description')">
     <section class="section-block">
-      <h2>Latest News</h2>
+      <h2>{{ t('newsPage.heading') }}</h2>
       <ul class="news-list news-list--full">
         <li v-for="item in latestNews" :key="`${item.date}-${item.text}`">
           <time>{{ item.date }}</time>
@@ -14,6 +14,10 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import PageFrame from '../components/PageFrame.vue'
-import { latestNews } from '../data/site'
+import { useI18n } from '../i18n'
+
+const { t, tm } = useI18n()
+const latestNews = computed(() => tm('latestNews'))
 </script>

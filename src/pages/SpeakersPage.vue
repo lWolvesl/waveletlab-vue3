@@ -1,8 +1,8 @@
 <template>
   <PageFrame
-    title="Speakers"
-    breadcrumb="Speakers"
-    description="Invited speakers and academic leaders for ICCWAMTIP 2026."
+    :title="t('speakersPage.title')"
+    :breadcrumb="t('speakersPage.breadcrumb')"
+    :description="t('speakersPage.description')"
   >
     <section class="speaker-list">
       <article v-for="speaker in speakers" :key="speaker.name" class="speaker-card">
@@ -19,6 +19,10 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import PageFrame from '../components/PageFrame.vue'
-import { speakers } from '../data/site'
+import { useI18n } from '../i18n'
+
+const { t, tm } = useI18n()
+const speakers = computed(() => tm('speakers'))
 </script>
