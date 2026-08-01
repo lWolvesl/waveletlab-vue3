@@ -26,4 +26,6 @@ Site images and the CNAME are copied from `public/`. Downloadable conference doc
 the `waveletlab-uestc/oos` repository through jsDelivr, with the larger 2023 booklet served through
 GitHub Raw.
 
-The GitHub Pages workflow is defined at `.github/workflows/deploy-vue3-site.yml` in the repository root.
+The GitHub Pages workflow is defined at `.github/workflows/deploy.yml` in the repository root and runs
+when changes are pushed to `main`. In the repository's Pages settings, select **GitHub Actions** as the
+deployment source so that Pages serves the generated `dist/` artifact instead of the source tree.
