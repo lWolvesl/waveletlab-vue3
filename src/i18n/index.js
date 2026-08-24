@@ -6,6 +6,8 @@ const localeStorageKey = 'iccwamtip-locale'
 
 const assetCdnBase =
   'https://cdn.jsdelivr.net/gh/waveletlab-uestc/oos@271b5494f91c1869d5d3d590b8ab02d682295ef4'
+export const latexTemplateUrl =
+  'https://cdn.jsdelivr.net/gh/waveletlab-uestc/oos@c8de3b1434f83882f2544a85753ad5c747bce4a1/2026/iccwamtip2026_latex_templates-260824.zip'
 const bookletUrl =
   'https://raw.githubusercontent.com/waveletlab-uestc/oos/271b5494f91c1869d5d3d590b8ab02d682295ef4/booklet2023.pdf'
 
@@ -182,7 +184,7 @@ export const messages = {
       { label: 'Call for Paper (CN)', href: `${assetCdnBase}/CallforPaper-CN260731.pdf`, download: 'CallforPaper-CN.pdf' },
       { label: 'Paper Format (EN)', href: `${assetCdnBase}/PaperFormat-2026(EN)-260731.dotx`, download: 'PaperFormat-2026(EN).dotx' },
       { label: 'Paper Format (CN)', href: `${assetCdnBase}/PaperFormat-2026(CN)-260731.dotx`, download: 'PaperFormat-2026(CN).dotx' },
-      { label: 'LaTeX Template', href: `${assetCdnBase}/iccwamtip2026_latex_templates-260731.zip`, download: 'iccwamtip2026_latex_templates.zip' },
+      { label: 'LaTeX Template', href: latexTemplateUrl, download: 'iccwamtip2026_latex_templates.zip' },
     ],
     sidebar: {
       flyerTitle: 'ICCWAMTIP Conference Flyer',
@@ -662,7 +664,7 @@ export const messages = {
       { label: '征稿通知（中文）', href: `${assetCdnBase}/CallforPaper-CN260731.pdf`, download: 'CallforPaper-CN.pdf' },
       { label: '论文格式（英文）', href: `${assetCdnBase}/PaperFormat-2026(EN)-260731.dotx`, download: 'PaperFormat-2026(EN).dotx' },
       { label: '论文格式（中文）', href: `${assetCdnBase}/PaperFormat-2026(CN)-260731.dotx`, download: 'PaperFormat-2026(CN).dotx' },
-      { label: 'LaTeX 模板', href: `${assetCdnBase}/iccwamtip2026_latex_templates-260731.zip`, download: 'iccwamtip2026_latex_templates.zip' },
+      { label: 'LaTeX 模板', href: latexTemplateUrl, download: 'iccwamtip2026_latex_templates.zip' },
     ],
     sidebar: {
       flyerTitle: 'ICCWAMTIP 会议资料',
