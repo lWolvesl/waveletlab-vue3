@@ -11,7 +11,7 @@
           {{ t('guidance.q1TextBefore') }}
           <a href="https://cdn.jsdelivr.net/gh/waveletlab-uestc/oos@271b5494f91c1869d5d3d590b8ab02d682295ef4/PaperFormat-2026(EN)-260731.dotx">PAPER FORMAT (EN)</a> or
           <a href="https://cdn.jsdelivr.net/gh/waveletlab-uestc/oos@271b5494f91c1869d5d3d590b8ab02d682295ef4/PaperFormat-2026(CN)-260731.dotx">PAPER FORMAT (CN)</a> or
-          <a href="https://cdn.jsdelivr.net/gh/waveletlab-uestc/oos@271b5494f91c1869d5d3d590b8ab02d682295ef4/iccwamtip2026_latex_templates-260731.zip">LaTeX Template</a>
+          <a :href="latexTemplateUrl">LaTeX Template</a>
           ({{ t('guidance.q1TextAfter') }})
         </p>
       </article>
@@ -106,7 +106,7 @@
 import { computed } from 'vue'
 import DataTable from '../components/DataTable.vue'
 import PageFrame from '../components/PageFrame.vue'
-import { useI18n } from '../i18n'
+import { latexTemplateUrl, useI18n } from '../i18n'
 
 const { t, tm } = useI18n()
 const conference = computed(() => tm('conference'))
