@@ -254,7 +254,7 @@ export const messages = {
     latestNews: [
       {
         date: '2026-09-14',
-        text: 'The conference will start promptly at 8:50 AM on Saturday, September 19. Click for the participation information, including the on-site venue and Tencent Meeting details.',
+        text: 'The conference will start promptly at 8:50 AM on Saturday, September 19. Click for the participation information.',
         to: '/online-meeting.html',
       },
       {
@@ -756,7 +756,7 @@ export const messages = {
     ],
     catalogNumbers,
     latestNews: [
-      { date: '2026-09-14', text: '会议将于9月19日（本周六）上午 8:50 准时开始，点击查看参会信息（含线下地点与腾讯会议入会方式）。', to: '/online-meeting.html' },
+      { date: '2026-09-14', text: '会议将于9月19日（本周六）上午 8:50 准时开始，点击查看参会信息。', to: '/online-meeting.html' },
       { date: '2026-07-31', text: '论文投稿截止日期已延期至2026年8月31日。' },
       { date: '2026-07-07', text: '征稿通知重要日期已更新：截稿日期为2026年8月10日，录用通知为2026年9月10日，举办日期为2026年9月19日。' },
       { date: '2023-12-29', text: '已添加全部论文的最终会议手册，请通过此链接下载。', href: bookletUrl },
@@ -1083,7 +1083,7 @@ export const messages = {
         { label: '会议名称', value: '第二十三届小波智能体媒介技术和信息处理国际计算机学术会议' },
         { label: '会议日期', value: '2026年9月19日（GMT+08:00，中国标准时间）' },
         { label: '会议时间', value: '9月19日（本周六）上午 8:50' },
-        { label: '线下地点', value: '电子科技大学清水河校区主楼 B1 三楼计算机学院言实厅' },
+        { label: '线下地点', value: '电子科技大学清水河校区主楼 B1 三楼计算机学院言十厅' },
         { label: '线上参会（腾讯会议）', value: '600 421 404' },
         { label: '电话入会（中国大陆）', value: '+86 (0)755 36550000' },
       ],
