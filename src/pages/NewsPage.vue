@@ -5,7 +5,8 @@
       <ul class="news-list news-list--full">
         <li v-for="item in latestNews" :key="`${item.date}-${item.text}`">
           <time>{{ item.date }}</time>
-          <a v-if="item.href" :href="item.href">{{ item.text }}</a>
+          <RouterLink v-if="item.to" :to="item.to">{{ item.text }}</RouterLink>
+          <a v-else-if="item.href" :href="item.href">{{ item.text }}</a>
           <span v-else>{{ item.text }}</span>
         </li>
       </ul>

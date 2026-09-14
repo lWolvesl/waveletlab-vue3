@@ -155,6 +155,7 @@ export const messages = {
       committees: 'Committees',
       contact: 'Contact',
       news: 'News',
+      onlineMeeting: 'Online Meeting',
     },
     conference: {
       shortName: 'ICCWAMTIP 2026',
@@ -229,6 +230,8 @@ export const messages = {
         'We aim to building an idea-trading platform for the purpose of encouraging researcher participating in this event. The papers to be presented at ICCWAMTIP past conferences addressed many grand challenges in modern engineering.',
         'The full papers to be presented will be peer-reviewed by expert reviewers including the whole organising committees members. We will be thankful for the contributions to ICCWAMTIP 2026. We look forward to your participation and continued engagement at future ICCWAMTIP conferences.',
       ],
+      onlineMeetingTitle: 'Online Participation (Tencent Meeting)',
+      onlineMeetingMore: 'View details',
       latestNews: 'Latest News',
       viewAllNews: 'View all news',
       routineTitle: 'Conference Routine',
@@ -249,6 +252,11 @@ export const messages = {
     ],
     catalogNumbers,
     latestNews: [
+      {
+        date: '2026-09-14',
+        text: 'The conference is about to begin. Online participants can join via Tencent Meeting — click for the online meeting details.',
+        to: '/online-meeting.html',
+      },
       {
         date: '2026-07-31',
         text: 'The paper submission deadline has been extended to August 31st, 2026.',
@@ -601,6 +609,21 @@ export const messages = {
       description: 'Latest updates from ICCWAMTIP.',
       heading: 'Latest News',
     },
+    onlineMeetingPage: {
+      title: 'Online Meeting',
+      breadcrumb: 'Online Meeting',
+      description: 'Tencent Meeting information for online participation in ICCWAMTIP 2026.',
+      heading: 'Online Participation (Tencent Meeting)',
+      intro: 'ICCWAMTIP 2026 is about to begin. Online participants may join the conference through Tencent Meeting with the meeting information below.',
+      rows: [
+        { label: 'Meeting name', value: 'The 23rd International Computer Conference on Wavelet Active Media Technology and Information Processing' },
+        { label: 'Date', value: 'September 19, 2026 (GMT+08:00, China Standard Time)' },
+        { label: 'Time', value: '07:30 – 14:00 (6 hours 30 minutes)' },
+        { label: 'Meeting ID', value: '600 421 404' },
+        { label: 'Phone dial-in (Chinese Mainland)', value: '+86 (0)755 36550000' },
+      ],
+      note: 'Open the Tencent Meeting app or official website at the scheduled time, enter the meeting ID, and join the meeting. Participants in the Chinese mainland may also dial the phone number above to join by phone.',
+    },
     speakersPage: {
       title: 'Speakers',
       breadcrumb: 'Speakers',
@@ -635,6 +658,7 @@ export const messages = {
       committees: '组织委员会',
       contact: '联系我们',
       news: '新闻',
+      onlineMeeting: '线上参会',
     },
     conference: {
       shortName: 'ICCWAMTIP 2026',
@@ -709,6 +733,8 @@ export const messages = {
         '会议致力于搭建思想交流平台，鼓励研究人员积极参与。历届 ICCWAMTIP 会议论文聚焦现代工程中的诸多关键挑战。',
         '会议全文论文将由专家评审，包括组织委员会成员参与审稿。我们感谢各位作者对 ICCWAMTIP 2026 的支持，也期待大家持续参与未来会议。',
       ],
+      onlineMeetingTitle: '线上参会（腾讯会议）',
+      onlineMeetingMore: '查看详情',
       latestNews: '最新消息',
       viewAllNews: '查看全部',
       routineTitle: '会议安排',
@@ -729,6 +755,7 @@ export const messages = {
     ],
     catalogNumbers,
     latestNews: [
+      { date: '2026-09-14', text: '会议即将举办，线上参会人员可通过腾讯会议加入会议，点击查看线上参会信息。', to: '/online-meeting.html' },
       { date: '2026-07-31', text: '论文投稿截止日期已延期至2026年8月31日。' },
       { date: '2026-07-07', text: '征稿通知重要日期已更新：截稿日期为2026年8月10日，录用通知为2026年9月10日，举办日期为2026年9月19日。' },
       { date: '2023-12-29', text: '已添加全部论文的最终会议手册，请通过此链接下载。', href: bookletUrl },
@@ -1044,6 +1071,21 @@ export const messages = {
       breadcrumb: '新闻',
       description: 'ICCWAMTIP 最新动态。',
       heading: '最新消息',
+    },
+    onlineMeetingPage: {
+      title: '线上参会',
+      breadcrumb: '线上参会',
+      description: 'ICCWAMTIP 2026 腾讯会议线上参会信息。',
+      heading: '线上参会（腾讯会议）',
+      intro: '会议即将举办，线上参会人员可通过腾讯会议加入会议，会议信息如下。',
+      rows: [
+        { label: '会议名称', value: '第二十三届小波智能体媒介技术和信息处理国际计算机学术会议' },
+        { label: '会议日期', value: '2026年9月19日（GMT+08:00，中国标准时间）' },
+        { label: '会议时间', value: '07:30 – 14:00（共6小时30分钟）' },
+        { label: '会议号', value: '600 421 404' },
+        { label: '电话入会（中国大陆）', value: '+86 (0)755 36550000' },
+      ],
+      note: '请在会议时间打开腾讯会议 App 或官网，输入会议号加入会议；中国大陆地区参会者也可拨打上述电话号码电话入会。',
     },
     speakersPage: {
       title: '大会报告',
