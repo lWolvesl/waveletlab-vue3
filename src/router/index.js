@@ -9,6 +9,7 @@ import SpeakersPage from '../pages/SpeakersPage.vue'
 import CommitteesPage from '../pages/CommitteesPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
 import NewsPage from '../pages/NewsPage.vue'
+import OnlineMeetingPage from '../pages/OnlineMeetingPage.vue'
 import { locale, t } from '../i18n'
 
 const routes = [
@@ -21,6 +22,7 @@ const routes = [
   { path: '/committees.html', name: 'committees', component: CommitteesPage, meta: { titleKey: 'routes.committees' } },
   { path: '/contact.html', name: 'contact', component: ContactPage, meta: { titleKey: 'routes.contact' } },
   { path: '/news.html', name: 'news', component: NewsPage, meta: { titleKey: 'routes.news' } },
+  { path: '/online-meeting.html', name: 'online-meeting', component: OnlineMeetingPage, meta: { titleKey: 'routes.onlineMeeting' } },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 

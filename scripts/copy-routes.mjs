@@ -16,6 +16,7 @@ const routeEntries = [
   'guidance.html',
   'information.html',
   'news.html',
+  'online-meeting.html',
   'speakers.html',
   'timeline.html',
   'topics.html',

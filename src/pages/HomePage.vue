@@ -37,6 +37,21 @@
         <p v-for="paragraph in tm('home.introParagraphs')" :key="paragraph">{{ paragraph }}</p>
       </section>
 
+      <section class="section-block meeting-highlight">
+        <div class="section-heading">
+          <h2>{{ t('home.onlineMeetingTitle') }}</h2>
+          <RouterLink to="/online-meeting.html">{{ t('home.onlineMeetingMore') }}</RouterLink>
+        </div>
+        <p>{{ t('onlineMeetingPage.intro') }}</p>
+        <ul class="meeting-info">
+          <li v-for="row in onlineMeetingRows" :key="row.label">
+            <span>{{ row.label }}</span>
+            <strong>{{ row.value }}</strong>
+          </li>
+        </ul>
+        <p>{{ t('onlineMeetingPage.note') }}</p>
+      </section>
+
       <section class="section-block">
         <div class="section-heading">
           <h2>{{ t('home.latestNews') }}</h2>
@@ -45,7 +60,8 @@
         <ul class="news-list">
           <li v-for="item in latestNews.slice(0, 5)" :key="`${item.date}-${item.text}`">
             <time>{{ item.date }}</time>
-            <a v-if="item.href" :href="item.href">{{ item.text }}</a>
+            <RouterLink v-if="item.to" :to="item.to">{{ item.text }}</RouterLink>
+            <a v-else-if="item.href" :href="item.href">{{ item.text }}</a>
             <span v-else>{{ item.text }}</span>
           </li>
         </ul>
@@ -94,6 +110,7 @@ import { useI18n } from '../i18n'
 const { t, tm } = useI18n()
 const conference = computed(() => tm('conference'))
 const latestNews = computed(() => tm('latestNews'))
+const onlineMeetingRows = computed(() => tm('onlineMeetingPage.rows'))
 const routine = computed(() => tm('routine'))
 const importantDates = computed(() => tm('importantDates'))
 const catalogNumbers = computed(() => tm('catalogNumbers'))
